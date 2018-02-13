@@ -1,0 +1,4 @@
+UserParameter=dhcp.ranges.discovery,/usr/local/sbin/dhcp.ranges.discovery.sh
+UserParameter=dhcp.range.max[*],cat /var/log/zabbix/dhcp-range.cnt | grep $1 | awk '{ print $$2 }'
+UserParameter=dhcp.range.leases[*],cat /var/log/zabbix/dhcp-range.cnt | grep $1 | awk '{ print $$3 }'
+UserParameter=dhcp.range.used[*],cat /var/log/zabbix/dhcp-range.cnt | grep $1 | awk '{ p = $3 * 100 / $2 ; print p }'
